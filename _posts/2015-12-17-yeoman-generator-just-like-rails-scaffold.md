@@ -87,24 +87,24 @@ Name **must** start with 'generator-' so it can be accessible/found on the main 
  - molecule
  - organism
 
- #### Why?
-   I had two options while building this generator
+#### Why?
+ I had two options while building this generator
 
-   Create one App generator that would receive the `type` and `component` as argument and for every run you should run the command like this `yo atomic-reactor atom component`
+ Create one App generator that would receive the `type` and `component` as argument and for every run you should run the command like this `yo atomic-reactor atom component`
 
-   The other option was building sub-generators that will result in commands like this `yo atomic-reactor:atom component`
+ The other option was building sub-generators that will result in commands like this `yo atomic-reactor:atom component`
 
-   I chose the latter because it makes easy to deal with each type(atom, molecule or organism) independently. Trying to follow the [SRP](https://en.wikipedia.org/wiki/Single_responsibility_principle).
+ I chose the latter because it makes easy to deal with each type(atom, molecule or organism) independently. Trying to follow the [SRP](https://en.wikipedia.org/wiki/Single_responsibility_principle).
 
-   #### How ?
+#### How ?
 
-   To get that command you must generate a sub-generator inside your generator with `yo generator:subgenerator <name>`
+To get that command you must generate a sub-generator inside your generator with `yo generator:subgenerator <name>`
 
-   With that I was able to build each sub-generator. But I noticed the repeated pattern on them. Basically they share the same functionality but changing only the path where I will generate my folders.
+With that I was able to build each sub-generator. But I noticed the repeated pattern on them. Basically they share the same functionality but changing only the path where I will generate my folders.
 
-   With that in mind I went looking for a way to reuse the code and I went with the [factory design patter](https://en.wikipedia.org/wiki/Factory_method_pattern) where I would get the Yeoman required object to do the process when the command is called(like writing, prompting, etc). So I build a `base.js` file and export my object using `exports` from node, you can see how to use [on this SitePoint post](http://www.sitepoint.com/understanding-module-exports-exports-node-js/).
+With that in mind I went looking for a way to reuse the code and I went with the [factory design patter](https://en.wikipedia.org/wiki/Factory_method_pattern) where I would get the Yeoman required object to do the process when the command is called(like writing, prompting, etc). So I build a `base.js` file and export my object using `exports` from node, you can see how to use [on this SitePoint post](http://www.sitepoint.com/understanding-module-exports-exports-node-js/).
 
-   I required the file and all that I needed to do was call `baseGeneratorFactory('atom')` on `module.exports = yeoman.generators.Base.extend(baseGeneratorFactory('atom'));` you can see more on [Github](https://github.com/cassioscabral/generator-atomic-reactor)
+I required the file and all that I needed to do was call `baseGeneratorFactory('atom')` on `module.exports = yeoman.generators.Base.extend(baseGeneratorFactory('atom'));` you can see more on [Github](https://github.com/cassioscabral/generator-atomic-reactor)
 
 
 ### Copying templates
