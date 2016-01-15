@@ -62,10 +62,10 @@ bgGradientOpacity: darker # darker or lighter - control featured image opacity
 
 To replace logos with your own, simply update the following files in `assets/images/`:
 
-- `logo-white.svg`
-- `logo-black.svg`
-- `logo-text-white.svg`
-- `logo-text-black.svg`
+- `logoCC.png`
+- `logoCC.png`
+- `logoCC.png`
+- `logoCC.png`
 
 ### Typography
 
