@@ -2102,7 +2102,7 @@ body {
   list-style: none;
   margin: 1.5rem auto;
   padding-left: 0;
-  width: 50%;
+  display: table;
 }
 
 .socialAccountList:before, .socialAccountList:after {
@@ -2112,6 +2112,11 @@ body {
 
 .socialAccountList:after {
   clear: both;
+}
+
+.socialAccountList li {
+  display: table-cell;
+  padding: 0 10px;
 }
 
 .socialAccount {

@@ -237,7 +237,11 @@
   list-style: none;
   margin: $leading auto;
   padding-left: 0;
-  width: 50%;
+  display: table;
+  li {
+    display: table-cell;
+    padding: 0 10px;
+  }
 }
 
 .socialAccount {
