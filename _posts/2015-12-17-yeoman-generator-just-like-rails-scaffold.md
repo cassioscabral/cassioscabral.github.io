@@ -113,7 +113,7 @@ I required the file and all that I needed to do was call `baseGeneratorFactory('
 
   In short what I used was:
 
-  ```
+  ```jsx
   this.fs.copyTpl(
         this.templatePath(type + '.jsx'),
         this.destinationPath(appPath + componentType + '/' + snakeComponent + '/' + this.component + '.jsx'),
@@ -133,7 +133,7 @@ When setting up my app the first run of the generator `yo atomic-reactor` will c
 
 I used the `makedirp` module to do this.
 
-```
+```javascript
 mkdirp.sync('src/app/atoms/');
 mkdirp.sync('src/app/molecules/');
 mkdirp.sync('src/app/organisms/');
@@ -143,14 +143,14 @@ mkdirp.sync('src/app/organisms/');
 #### Creating a command to generate something
 With all that I was able to run the commands:
 
-```
+```bash
 yo atomic-reactor:atom my_component
 yo atomic-reactor:molecule my_component
 yo atomic-reactor:organism my_component
 ```
 Generating:
 
-```
+```bash
 ▶ yo atomic-reactor:organism my_component
 create src/app/organisms/my_component/MyComponent.jsx
 create src/app/organisms/my_component/stylesheets/my_component.scss
@@ -161,7 +161,7 @@ create src/app/organisms/my_component/tests/my_component.js
 
 In each sub-generator I used the Yeoman suggestion for [arguments](http://yeoman.io/authoring/user-interactions.html) and did this on the constructor:
 
-```
+```javascript
 this.argument('component', { type: String, required: true });
 this.component = _.capitalize(_.camelCase(this.component));
 ```
