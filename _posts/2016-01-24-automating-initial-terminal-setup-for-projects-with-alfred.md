@@ -61,7 +61,7 @@ Tried to build functions to make more generic and easy to maintain as possible b
 
 *Observations*: I changed the option "New tabs opens with: " from my terminal settings from 'same profile' to 'default profile'. **Without this**, the makeTab command will run the same commands over and over for every new tabs.
 
-```AppleScript
+```applescript
 on makeTab()
   tell application "System Events" to keystroke "t" using command down
   delay 0.2
