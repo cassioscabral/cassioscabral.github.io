@@ -7,7 +7,7 @@ last_modified_at:  2015-12-17 12:00:00
 author:     "cassioscabral"
 header-img: "img/blog/header/post-bg-01.jpg"
 thumbnail: /img/blog/thumbs/thumb01.png
-tags: [rails, react, yeoman, generator, scaffold, rateissues, component, building react components, automation, build yeoman generator, factory design pattern on yeoman]
+tags: [rails, react, yeoman, generator, scaffold, rateissues, component, building react components, automation, build yeoman generator, factory design pattern on yeoman, cassioscabral, cassio, cabral, cassio s cabral, cassio soares cabral]
 categories: rateissues
 comments: true
 share: true
