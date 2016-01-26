@@ -113,7 +113,7 @@ I required the file and all that I needed to do was call `baseGeneratorFactory('
 
   In short what I used was:
 
-  ```jsx
+  ```javascript
   this.fs.copyTpl(
         this.templatePath(type + '.jsx'),
         this.destinationPath(appPath + componentType + '/' + snakeComponent + '/' + this.component + '.jsx'),
